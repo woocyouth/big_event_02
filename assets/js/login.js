@@ -19,8 +19,8 @@ $(function () {
 
     let layer = layui.layer;
     $(".login-box .layui-btn").on("submit", function (e) {
+        console.log('ok');
         e.preventDefault();
-        // console.log('ok');
         $.ajax({
             url: '/api/login',
             type: 'post',
@@ -41,6 +41,7 @@ $(function () {
                 });
                 localStorage.setItem("my2Token", res.token);
                 location.href = "/index.html";
+
             }
         })
     })

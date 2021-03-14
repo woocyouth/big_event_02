@@ -18,8 +18,7 @@ $(function () {
     });
 
     let layer = layui.layer;
-    $(".login-box .layui-btn").on("submit", function (e) {
-        console.log('ok');
+    $("#form_login").on("submit", function (e) {
         e.preventDefault();
         $.ajax({
             url: '/api/login',
@@ -82,7 +81,7 @@ $(function () {
         }
     });
 
-    $(".reg-box .layui-btn").on("click", function (e) {
+    $("#form_reg").on("submit", function (e) {
         e.preventDefault()
         // console.log('ok');
         let formInfo = $("#form_reg").serialize();

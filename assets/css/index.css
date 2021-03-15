@@ -29,6 +29,10 @@ iframe {
     text-align: center;
 }
 
+.layui-icon-app {
+    margin: 0 10px;
+}
+
 .layui-footer {
     text-align: center;
 }

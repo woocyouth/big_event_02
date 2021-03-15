@@ -1,20 +1,25 @@
 $(function () {
-    getUserInfo()
+    getUserInfo();
+    $("#logout").on("click", function () {
+        localStorage.removeItem("my2Token");
+        location.href = "/login.html";
+    })
 })
 
 function getUserInfo() {
     $.ajax({
         url: '/my/userinfo',
-        headers: {
-            Authorization: localStorage.getItem("my2Token") || ""
-        },
+        // headers: {
+        //     Authorization: localStorage.getItem("my2Token") || ""
+        // },
         success: (res) => {
             // console.log(res);
             if (res.status != 0) {
                 layer.msg(res.message, {
                     icon: 5
                 });
-                location.href = "/login.html";
+                // localStorage.removeItem("my2Token");
+                // location.href = "/login.html";
                 return;
             }
 
